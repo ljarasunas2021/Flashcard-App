@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <script type="text/javascript" src="../src/index.js">
+    </script>
+    <link rel="stylesheet" href="../src/index.css">
+    <title>QuizLIT</title>
+  </head>
+  <body>
+    <h1> QuizLit </h1>
+
+    <a href = "index.html">
+      <button type="button">Home</button>
+    </a>
+
+    <p>Each word goes on a new line</p>
+
+    <textarea name="newTerms" rows="8" cols="80" id="newTerms"></textarea>
+
+    <br>
+
+    <button onclick="funcCreateDeck()">Create Deck</button>
+
+    <script>
+    function funcCreateDeck() {
+      let allTerms = document.getElementById("newTerms").value;
+      let indexOfLastNewLine = 0;
+      let allTermsArray = new Array();
+      let j = 1;
+
+      for(let h = 0; j > 0; h++) {
+        let indexOfNewLine = allTerms.indexOf("\n",indexOfLastNewLine)
+
+        if (indexOfNewLine < 0) {
+          j = -1;
+          allTermsArray.push(allTerms.slice(indexOfLastNewLine))
+        } else if (j != -1) {
+          allTermsArray.push(allTerms.slice(indexOfLastNewLine,indexOfNewLine))
+        }
+
+        indexOfLastNewLine = indexOfNewLine + 1;
+      }
+
+      for (let g = 0; g < allTermsArray.length; g++)
+        let dictionary = JSON.parse('../src/dictionary.json');
+        alert(dictionary.allTermsArray[g]);
+      }
+
+    }
+    </script>
+
+  </body>
+</html>
