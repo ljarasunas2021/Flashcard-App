@@ -12,47 +12,60 @@
     <title>QuizLIT</title>
   </head>
   <body>
-    <h1> QuizLit </h1>
+    <div class="header">
+      <a href="#default" class="logo">QuizLIT</a>
+      <div class="header-right">
+        <a href="index.html">Home</a>
+        <a class="active" href="newSet.html">Create Set</a>
+        <a href="yourDecks.html">Your Sets</a>
+      </div>
+    </div>
+    <div class="mainText">
+      <h3> Title of Set </h3>
 
-    <a href = "index.html">
-      <button type="button">Home</button>
-    </a>
+      <textarea name="titleOfSet" rows = "1" cols = "15" id="titleOfSet"></textarea>
 
-    <p>Each word goes on a new line</p>
+      <h3> List of Terms </h3>
+      <p>(Each word goes on a new line)</p>
 
-    <textarea name="newTerms" rows="8" cols="80" id="newTerms"></textarea>
+      <textarea name="newTerms" rows="8" cols="40" id="newTerms"></textarea>
 
-    <br>
+      <br> <br>
 
-    <button onclick="funcCreateDeck()">Create Deck</button>
+      <button onclick="funcCreateDeck()" class = "button">Create Deck</button>
 
-    <script>
-    function funcCreateDeck() {
-      let allTerms = document.getElementById("newTerms").value;
-      let indexOfLastNewLine = 0;
-      let allTermsArray = new Array();
-      let j = 1;
+      <script>
+      function funcCreateDeck() {
+        let nameOfDeck = document.getElementById("titleOfSet").value;
+        let allTerms = document.getElementById("newTerms").value;
 
-      for(let h = 0; j > 0; h++) {
-        let indexOfNewLine = allTerms.indexOf("\n",indexOfLastNewLine)
+        if (nameOfDeck == "") {
+          alert("Please Create a Title");
+        }
+        if (allTerms == "") {
+          alert("Please Create some Terms");
+        }
+        let indexOfLastNewLine = 0;
+        let allTermsArray = new Array();
+        let j = 1;
 
-        if (indexOfNewLine < 0) {
-          j = -1;
-          allTermsArray.push(allTerms.slice(indexOfLastNewLine))
-        } else if (j != -1) {
-          allTermsArray.push(allTerms.slice(indexOfLastNewLine,indexOfNewLine))
+        for(let h = 0; j > 0; h++) {
+          let indexOfNewLine = allTerms.indexOf("\n",indexOfLastNewLine)
+
+          if (indexOfNewLine < 0) {
+            j = -1;
+            allTermsArray.push(allTerms.slice(indexOfLastNewLine))
+          } else if (j != -1) {
+            allTermsArray.push(allTerms.slice(indexOfLastNewLine,indexOfNewLine))
+          }
+
+          indexOfLastNewLine = indexOfNewLine + 1;
         }
 
-        indexOfLastNewLine = indexOfNewLine + 1;
+        //call react component id = "createNewSet"
       }
-
-      for (let g = 0; g < allTermsArray.length; g++)
-        let dictionary = JSON.parse('../src/dictionary.json');
-        alert(dictionary.allTermsArray[g]);
-      }
-
-    }
-    </script>
+      </script>
+    </div>
 
   </body>
 </html>

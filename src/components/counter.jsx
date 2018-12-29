@@ -3,33 +3,36 @@ import React, {
 } from 'react';
 
 class Counter extends Component {
-  state = {
-    count: 5
-  };
 
   render() {
-    <showDecks atleastOneDeck={true} />
-    //document.getElementById('root')
+    return(
+      <h1> Hello World</h1>
+    )
+  }
+  /*
+  render() {
+    return (
+      showDecks({atleastOneDeck:true})
+    )
   }
 
   showDecks(props) {
     const atleastOneDeck = props.atleastOneDeck;
     if (atleastOneDeck) {
-      return <yesDecksYet />;
+      return yesDecksYet();
     }
-    return <noDecksYet />;
+    return noDecksYet();
   }
 
-  noDecksYet(props) {
+  noDecksYet() {
     return <h1>No decks created yet!</h1>;
   }
 
-  yesDecksYet(props) {
-    for (let j = 0; j < 5; j++) {
-      return <h2> allDecks[j] </h2>
-    }
+  yesDecksYet() {
+    return <h1>Some decks have been created!</h1>
   }
+  */
 
 }
 
-export default Counter;
+export default Counter

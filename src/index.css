@@ -13,11 +13,77 @@ code {
     monospace;
 }
 
-h1 {
-  background-color: #80b3ff;
-  text-indent: 30px;
-  font-style: italic;
-  font-style: bold;
-  font-size: 500%;
-  text-align: left;
+.button {
+  background-color: #4c8bef;
+  color: white;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+}
+
+.button:hover {
+  background-color: #639fff;
+  color: white;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 25px;
+  line-height: 30px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 75px;
+  font-weight: bold;
+  color: #4c8bef;
+}
+
+.header a:hover {
+  background-color: #ddd;
+}
+
+.header a.logo:hover {
+  background-color: #f1f1f1
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .header-right {
+    float: none;
+  }
+}
+
+.mainText {
+  padding-left: 5%;
+}
+
+h3 {
+  font-size: 20px;
 }
