@@ -30,6 +30,7 @@ class Counter extends Component {
 
   yesDecksYet() {
     return <h1>Some decks have been created!</h1>
+    // I'll work on displaying the decks later but currently i think i should work on creating definitions and then creating sets (terms + definitions) and then I can worry about counting the amount of sets
   }
   */
 
