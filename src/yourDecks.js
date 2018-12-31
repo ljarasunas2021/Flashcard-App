@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import "bootstrap/dist/css/bootstrap.css";
-import Counter from './components/counter';
+import ShowUserDecks from './components/counter';
 import NewSet from './components/newSet';
 
 
-ReactDOM.render( < Counter / > , document.getElementById("root"));
+ReactDOM.render( < ShowUserDecks / > , document.getElementById("UserDecks"));
 //ReactDOM.render( < NewSet / > , document.getElementById('createNewSet'));
 
 // If you want your app to work offline and load faster, you can change

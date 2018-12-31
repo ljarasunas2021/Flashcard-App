@@ -2,18 +2,11 @@ import React, {
   Component
 } from 'react';
 
-class Counter extends Component {
+class ShowUserDecks extends Component {
 
-  /*
-  render() {
-    return(
-      <h1> Hello World</h1>
-    )
-  }
-  */
   render() {
     return (
-      showDecks({atleastOneDeck:true})
+      <this.showDecks atleastOneDeck="true" />
     )
   }
 
@@ -26,4 +19,4 @@ class Counter extends Component {
   }
 }
 
-export default Counter
+export default ShowUserDecks
